@@ -1,0 +1,103 @@
+# ========================================
+# Unity 3D .gitignore
+# ========================================
+
+# ---> Unity3D generated files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+sysinfo.txt
+
+# Crash Reports
+*.stacktrace
+
+# Unity Cache
+Cache/
+Assets/AssetStoreTools*
+
+# Auto-generated files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity generated meta files (keep these!)
+# *.meta  ← Không bỏ qua file .meta, vì Unity cần chúng để nhận dạng tài nguyên
+
+# Unity build data
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+*.dll
+*.dmg
+*.ipa
+*.msi
+*.zip
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# JetBrains Rider
+.idea/
+*.iml
+
+# Visual Studio / VSCode
+.vscode/
+.vs/
+*.csproj
+*.sln
+*.unityproj
+
+# Unity Addressables
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*
+!/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*.json
+!/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*.asset
+
+# TextMesh Pro
+/[Aa]ssets/TextMesh Pro/*
+!/[Aa]ssets/TextMesh Pro/Resources/
+
+# Packages and Cache
+/[Pp]ackages/com.unity.package-manager-ui
+/[Pp]ackages/com.unity.test-framework
+/[Pp]ackages/manifest.json
+/[Pp]ackages/packages-lock.json
+
+# Build artifacts
+*.unitypackage
+Builds/
+Build/
+Build_*/
+
+# Collaborate and Cloud Cache
+/[Uu]serSettings/Layouts/
+/[Ll]ibrary/ArtifactDB
+/[Ll]ibrary/metadata
+/[Ll]ibrary/ScriptAssemblies
+
+# Asset Store / External Packages Cache
+/[Aa]ssets/Plugins/Editor/JetBrains*
+/[Aa]ssets/StreamingAssets/aa/*
