@@ -27,6 +27,6 @@ public class CaloriesBar : MonoBehaviour
         float fillValue = currentCalories / maxCalories;
         slider.value = fillValue;
 
-        caloriesCounter.text = currentCalories + " / " + maxCalories;
+        caloriesCounter.text = currentCalories + "/" + maxCalories;
     }
 }

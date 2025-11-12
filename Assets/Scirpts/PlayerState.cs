@@ -36,6 +36,18 @@ public class PlayerState : MonoBehaviour
     {
         currentHealth = maxHealth;
         currentCalories = maxCalories;
+        currentHydrationPrecent = maxHydrationPrecent;
+
+        StartCoroutine(decreaseHydration());
+    }
+
+    IEnumerator decreaseHydration()
+    {
+        while (true)
+        {
+            currentHydrationPrecent -= 1;
+            yield return new WaitForSeconds(10);
+        }
     }
 
     void Update()
@@ -54,5 +66,20 @@ public class PlayerState : MonoBehaviour
         {
             currentHealth -= 10;
         }
+    }
+
+    public void setHealth(float newHealth)
+    {
+        currentHealth = newHealth;
+    }
+
+    public void setCalories(float newCalories)
+    {
+        currentCalories = newCalories;
+    }
+
+    public void setHydration(float newHydration)
+    {
+        currentHydrationPrecent = newHydration;
     }
 }

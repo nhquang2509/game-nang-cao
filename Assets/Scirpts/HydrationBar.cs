@@ -1,16 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class HydrationBar : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Slider slider;
+    public TMP_Text hydrationCounter;
+
+    public GameObject playerState;
+
+    private float currentHydration, maxHydration;
+
+    void Awake()
     {
-        
+        slider = GetComponent<Slider>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        currentHydration = playerState.GetComponent<PlayerState>().currentHydrationPrecent;
+        maxHydration = playerState.GetComponent<PlayerState>().maxHydrationPrecent;
+
+        float fillValue = currentHydration / maxHydration;
+        slider.value = fillValue;
+
+        hydrationCounter.text = currentHydration + "%";
     }
 }
