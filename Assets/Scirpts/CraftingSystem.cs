@@ -70,19 +70,19 @@ public class CraftingSystem : MonoBehaviour
 
         StartCoroutine(caculate());
 
-        RefeshNeededItems();
     }
 
     public IEnumerator caculate()
     {
-        yield return new WaitForSeconds(1f);
+        yield return 0;
 
         InventorySystem.Instance.RecaculateList();
+
+        RefeshNeededItems();
     }
 
     void Update()
     {
-        RefeshNeededItems();
 
         if (Input.GetKeyDown(KeyCode.C) && !isOpen)
         {
@@ -103,7 +103,7 @@ public class CraftingSystem : MonoBehaviour
         }
     }
 
-    private void RefeshNeededItems()
+    public void RefeshNeededItems()
     {
         int stone_count = 0;
         int stick_count = 0;

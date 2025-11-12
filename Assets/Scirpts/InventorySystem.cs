@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class InventorySystem : MonoBehaviour
 {
@@ -22,6 +24,9 @@ public class InventorySystem : MonoBehaviour
 
     //public bool isFull;
 
+    public GameObject pickupAlert;
+    public TMP_Text pickupName;
+    public Image pickupImage;
 
     private void Awake()
     {
@@ -88,6 +93,27 @@ public class InventorySystem : MonoBehaviour
 
         itemList.Add(itemName);
 
+        TriggerPickupPopup(itemName, itemToAdd.GetComponent<Image>().sprite);
+
+        RecaculateList();
+        CraftingSystem.Instance.RefeshNeededItems();
+    }
+
+    void TriggerPickupPopup(string itemName, Sprite itemSprite)
+    {
+        pickupAlert.SetActive(true);
+
+        pickupName.text = "Picked up: " + itemName;
+
+        pickupImage.sprite = itemSprite;
+
+        StartCoroutine(HidePickupPopupAfterDelay(1f));
+    }
+
+    IEnumerator HidePickupPopupAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        pickupAlert.SetActive(false);
     }
 
     private GameObject FindNextEmptySlot()
@@ -139,6 +165,8 @@ public class InventorySystem : MonoBehaviour
                 }
             }
         }
+        RecaculateList();
+        CraftingSystem.Instance.RefeshNeededItems();
     }
 
     public void RecaculateList()
