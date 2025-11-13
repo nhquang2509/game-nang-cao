@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 27.92638, y: -0}
-  m_SizeDelta: {x: 42, y: 42}
+  m_SizeDelta: {x: 82, y: 82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2124209530260384873
 CanvasRenderer:
@@ -122,3 +122,6 @@ MonoBehaviour:
   healthEffect: 40
   caloriesEffect: 0
   hydrationEffect: 0
+  isEquippable: 0
+  isInsideQuickSlot: 0
+  isSelected: 0
